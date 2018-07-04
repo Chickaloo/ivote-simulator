@@ -2,7 +2,7 @@ import java.util.Hashtable;
 import java.util.Scanner;
 
 // Tracks inputs and returns to owner of room
-public class IVoteService {
+public class IVoteService implements Room{
 	
 	private RegisteredUser owner; // Only registered users and above may make/own questions
 	private Question question;
@@ -10,7 +10,7 @@ public class IVoteService {
 	private int roomLimit = 0;
 	private String token; // Used as a kind of hyperlink/unique ID for joining
 		
-	public void newQuestion() {
+	public void populate() {
 		results = new Hashtable<Integer, Integer[]>();
 		
 		Scanner s = new Scanner(System.in);
@@ -31,6 +31,10 @@ public class IVoteService {
 	
 	}
 	
+	public Question getQuestion() {
+		return question;
+	}
+	
 	public String[] getAnswers() {
 		return question.getAnswers();
 	}
@@ -43,8 +47,8 @@ public class IVoteService {
 		token = s;
 	}
 	
-	public void addAnswer(int u, Integer[] a) {
-		results.put(u, a);
+	public void send(int id, Integer[] i) {
+		results.put(id, i);
 	}
 	
 	public void addSimulatedAnswer(int i) {

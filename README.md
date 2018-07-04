@@ -13,3 +13,7 @@ Users that implement Voter, with varying degrees of privileges
 Question interface that branches off into multiple different possible question types
 
 IVoteSession that implements a "room" for iVote. Registered users and above may create an IVoteSession that others can join with a token. An IvoteSession has a Question and a Hashtable of responses.
+
+TODO: Fix generic Room Get Content shenanigans
+TODO: Add input scrubbing
+TODO: Refactor extraneous classes

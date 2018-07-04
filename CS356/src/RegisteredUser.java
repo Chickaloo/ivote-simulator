@@ -1,17 +1,17 @@
 
 public class RegisteredUser extends User {
 	
-	public RegisteredUser(int id) {
-		super(id);
+	public RegisteredUser() {
+		super();
 	}
 
 	// Creates a new IVoteService room and generates a question+answers
-	public String createRoom(Server s) {
+	public String createIVoteService(Server s) {
 
-		IVoteService ivs = new IVoteService();
-		
-		// Collect Room information
-		ivs.newQuestion();
+		Room ivs = new IVoteService();
+
+		// Collect Room information and generate question
+		ivs.populate();
 		
 		return s.newRoom(ivs).getToken();
 	}

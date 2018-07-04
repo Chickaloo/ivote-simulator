@@ -3,8 +3,8 @@
 // and therefore has no implementation. 
 public class AdminUser extends RegisteredUser {
 
-	public AdminUser(int id) {
-		super(id);
+	public AdminUser() {
+		super();
 	}
 
 
